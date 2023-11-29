@@ -43,6 +43,13 @@ def hello(app, card):
     # parse the entire api as a json to the local database...
     app.datastore["data"] = api_call.json()
 
+    # Loop through the 'location' & 'current' section of the api, and add data to the database...
+    for items in app.datastore["data"]["location"]:
+        app.datastore[items] = app.datastore["data"]["location"][items]
+
+    for items in app.datastore["data"]["current"]:
+        app.datastore[items] = app.datastore["data"]["current"][items]
+
 
     return "result-card"
 
