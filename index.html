@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Interactive Hello App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- This stylesheet makes the inputs and buttons look nice. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <!-- This tag loads PyScript -->
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <!-- This tells PyScript where to find the config file -->
+    <py-config src="./pyscript.toml"></py-config>
+    <!-- This tells PyScript where to find the Python code to run -->
+    <py-script src="./main.py"></py-script>
+    <!-- This is the template for the card with the id "get_name" -->
+    <template id="get_name">
+      <label for="name">Enter your name: </label>
+      <input id="name" type="text" autofocus/>
+      <button id="submit">Hello</button>
+    </template>
+    <!-- This is the template for the card with the id "say_hello" -->
+    <template id="say_hello">
+      <h1>Hello {name}!</h1>
+      <button id="again" autofocus>Again</button>
+    </template>
+    <!-- That's it! -->
+</body>
+</html>
