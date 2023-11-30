@@ -35,8 +35,13 @@
   </template>
   <!-- This is the template for the card with the id "result_card" -->
   <template id="result-card">
-    <h1>{data}!</h1>
-    <button id="again" >Again</button>
+    <div class="display">
+      <a class="label" id="city_name_label">{name}</a>
+      <img alt="{condition[text]}" src="{condition[icon]}" id="condition_icon"/>
+      <a class="label" id="condition_txt">{condition[text]}</a>
+      <a></a>
+
+    </div>
   </template>
   <!-- That's it! -->
 </body>

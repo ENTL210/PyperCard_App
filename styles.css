@@ -69,4 +69,16 @@ h2 {
     background-color: #1EA8F5;
 }
 
+#city_name_label {
+    font-size: 5rem;
+    font-weight: 800;
+}
 
+#condition_icon {
+    width: 100px;
+}
+
+#condition_txt {
+    font-size: 2rem;
+    font-weight: 800
+}

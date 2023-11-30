@@ -4,20 +4,24 @@ A simple PyperCard app to get a user's name, and then display a friendly
 """
 # We need to use the a pypercard App.
 from pypercard import App
-# import requests
 import requests
-
-# import json
 import json
-
-#import pyodide_http
 import pyodide_http
+from datetime import datetime
 
 # Create the app as the object called hello_app.
 weather_app = App()
 
 # Patch the Requests Libarary so it works with Pyscript
 pyodide_http.patch_all()
+
+def fetchTime(timestamp):
+    current = datetime.fromtimestamp(timestamp)
+    time = current.strftime("%H:%M").split(" ")
+    print(time)
+    print(time[0])
+
+
 
 # In the "input" card, when you "click" on the "submit" button...
 @weather_app.transition("input-card", "click", "submit-btn")
@@ -50,6 +54,7 @@ def hello(app, card):
     for items in app.datastore["data"]["current"]:
         app.datastore[items] = app.datastore["data"]["current"][items]
 
+    fetchTime(app.datastore["localtime_epoch"])
 
     return "result-card"
 
