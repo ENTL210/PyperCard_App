@@ -24,7 +24,7 @@
 
   <!-- This is the template for the card with the id "input_card" -->
   <template id="input-card">
-    <div class="display">
+    <div class="input-display">
       <h1>Weather</h1>
       <div class="fieldbox-wrapper">
         <h2>City of the United States</h2>
@@ -35,17 +35,32 @@
   </template>
   <!-- This is the template for the card with the id "result_card" -->
   <template id="result-card">
-    <div class="display">
+    <div class="result-display">
       <a class="label" id="city_name_label">{name}</a>
-      <img alt="{condition[text]}" src="{condition[icon]}" id="condition_icon"/>
-      <a class="label" id="condition_txt">{condition[text]}</a>
-      <a class="label" id="time">Today, {localtime_epoch}</a>
-      <a class="label" id="temperature">{temp_f}° F</a>
+      <div class="info-container">
+        <img alt="{condition[text]}" src="{condition[icon]}" id="condition_icon" />
+        <a class="label" id="condition_txt">{condition[text]}</a>
+        <a class="label" id="time">Today, {localtime_epoch}</a>
+        <a class="label" id="temperature">{temp_f}° F</a>
+      </div>
       <div class="additional-info-wrapper">
         <div class="info-wrapper">
-          
+          <img class="icon" alt="wind" src="./assets/breeze---filled-(24x24)@3x (1).png">
+          <a class="label" id="wind-label">Wind</a>
+          <a class="label" id="wind-measure">{wind_mph}</a>
+        </div>
+        <div class="info-wrapper">
+          <img class="icon" alt="wind" src="./assets/water-drop---filled-(24x24)@3x.png">
+          <a class="label" id="wind-label">Humidity</a>
+          <a class="label" id="wind-measure">{humidity}%</a>
+        </div>
+        <div class="info-wrapper">
+          <img class="icon" alt="wind" src="./assets/cloud-heavy-rain---filled-(24x24)@3x.png">
+          <a class="label" id="wind-label">Precipitation</a>
+          <a class="label" id="wind-measure">{precip_in}"</a>
         </div>
       </div>
+      <button id="return-btn">Another city!</button>
     </div>
   </template>
   <!-- That's it! -->

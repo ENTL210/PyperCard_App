@@ -59,19 +59,17 @@ def hello(app, card):
         app.datastore[items] = app.datastore["data"]["current"][items]
 
     app.datastore["localtime_epoch"] = fetchTime(app.datastore["localtime_epoch"])
-    
 
     return "result-card"
 
 
 # In the "result_card" card, when you "click" on the "again" button...
-@weather_app.transition("result-card", "click", "again")
+@weather_app.transition("result-card", "click", "return-btn")
 def again(app, card):
     """
     Don't do anything except transition to the "get_name" card.
     """
     return "input-card"
-
 
 # Start the hello_app
 weather_app.start()
