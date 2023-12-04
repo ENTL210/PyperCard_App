@@ -39,8 +39,13 @@
       <a class="label" id="city_name_label">{name}</a>
       <img alt="{condition[text]}" src="{condition[icon]}" id="condition_icon"/>
       <a class="label" id="condition_txt">{condition[text]}</a>
-      <a></a>
-
+      <a class="label" id="time">Today, {localtime_epoch}</a>
+      <a class="label" id="temperature">{temp_f}° F</a>
+      <div class="additional-info-wrapper">
+        <div class="info-wrapper">
+          
+        </div>
+      </div>
     </div>
   </template>
   <!-- That's it! -->

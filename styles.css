@@ -78,7 +78,20 @@ h2 {
     width: 100px;
 }
 
-#condition_txt {
+#condition_txt, #temperature {
     font-size: 2rem;
     font-weight: 800
+}
+
+.additional-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

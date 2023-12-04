@@ -17,9 +17,13 @@ pyodide_http.patch_all()
 
 def fetchTime(timestamp):
     current = datetime.fromtimestamp(timestamp)
-    time = current.strftime("%H:%M").split(" ")
-    print(time)
-    print(time[0])
+    time = current.strftime("%H:%M").split(":")
+    if int(time[0]) > 12:
+        return f"{int(time[0]) - 12}:{int(time[1])} PM"
+    elif int(time[0] == 12):
+        return f"{int(time[0])}:{int(time[1])} PM"
+    else: 
+        return f"{int(time[0])}:{int(time[1])} AM"
 
 
 
@@ -54,7 +58,8 @@ def hello(app, card):
     for items in app.datastore["data"]["current"]:
         app.datastore[items] = app.datastore["data"]["current"][items]
 
-    fetchTime(app.datastore["localtime_epoch"])
+    app.datastore["localtime_epoch"] = fetchTime(app.datastore["localtime_epoch"])
+    
 
     return "result-card"
 
